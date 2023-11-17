@@ -1,0 +1,263 @@
+
+/* Font import from file */
+@font-face {
+    font-family: "barlow";
+    src: url(../source/font/Barlow-Regular.ttf);
+}
+
+html {
+    font-family: barlow; /* Setting the imported font */
+    color: rgb(12, 37, 37);
+    background-color: aliceblue;
+}
+
+body {
+    display: flex; 
+    flex-direction: column; /* this will organize all the page elements into a vertical format. */
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: stretch;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 20%;
+    padding-right: 20%;
+    
+}
+
+h2 {
+    color: rgb(147, 231, 231);
+    background-color: rgb(80, 27, 6);
+    border-radius: 6px;
+    padding: 5px;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    background-color: rgb(173, 227, 236);
+    border-left: solid 5px  rgb(80, 27, 6);
+    border-right: solid 5px  rgb(80, 27, 6);
+}
+
+#navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding-bottom: 10px;
+    padding-left: 0;
+}
+
+/* Changing how the nav bar links look */
+
+/* Adding some padding to all links */
+#navbar a {
+    padding-inline: 5px;
+    color: rgb(80, 27, 6);
+    font-weight: bold;
+}
+
+/* Unvisited link */
+#navbar a:link {
+  color: inherit;
+  font-weight: inherit;
+  
+}
+
+/* Visited link */
+#navbar > a:visited {
+    color: rgb(80, 27, 6);
+}
+
+/* Mouse over link */
+#navbar > a:hover {
+  color: rgb(0, 204, 255);
+}
+
+/* Body's Main Style */
+main {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: beige;
+    border-left: solid 5px  rgb(80, 27, 6);
+    border-right: solid 5px  rgb(80, 27, 6);
+}
+
+#gallery-frame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: max-content;
+    width: 75%;
+    padding: 7.5%;
+    background-color: white;
+    border-bottom-width: 20px;
+    border-bottom-style: solid;
+    border-top-width: 20px;
+    border-top-style: solid;
+    border-left: 1px;
+    border-left-style: solid;
+    border-right: 1px;
+    border-right-style: solid;
+    border-color: rgb(80, 27, 6);
+    border-radius: 30px;
+    margin-bottom: 20px;
+}
+
+#display-image {
+    width: 100%;
+    height: auto;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.animation-button {
+    color: white;
+    background-color: rgb(80, 27, 6);
+    padding: 5px;
+    border-radius: 6px;
+}
+
+/* Popup container */
+#popup-container {
+    position: fixed;
+    /* display: inline-block; */
+    cursor: pointer;
+}
+
+#close-popup {
+    color:rgb(80, 27, 6);
+    background-color: rgb(173, 227, 236);
+    padding: 10px;
+}
+  
+/* The actual popup (appears on top) */
+#popup-container .popup-text {
+    visibility: hidden;
+    width: 200px;
+    height:fit-content;
+    background-color: rgb(80, 27, 6);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 20px;
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    left: 50%;
+    margin-left: -80px;
+}
+
+/* Toggle this class to show/hide the popup */
+#popup-container .show {
+    visibility: visible;
+    animation: fadeIn 1s;
+}
+  
+/* Add fade in to the popup */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+
+/* Footer's Style */ 
+footer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    background-color: rgb(173, 227, 236);
+    padding: 5px;
+    padding-bottom: 2%;
+    border-left: solid 5px  rgb(80, 27, 6);
+    border-right: solid 5px  rgb(80, 27, 6);
+}
+
+/* Unsure why they won't aling themselves when using justify content in the parent, so here we are */
+#signature {
+    align-self: center;
+}
+
+#back_to_top {
+    width: auto;
+    align-self: center;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+
+/* Dynamic Spacing */
+  
+/* Medium Width Screens */
+@media screen and (max-width: 1269px) and (min-width: 800px) {
+    body {
+    padding-left: 10%;
+    padding-right: 10%;
+    }
+
+.article {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+
+.image {
+    border: 0;
+    border-radius: 0;
+    padding: 1px;
+    height: 300px;
+    width: auto;
+    justify-self: center;
+    align-self: center;
+}
+
+.textbit {
+    height: fit-content;
+}
+
+  }
+  
+/* Portrait Mode */  
+@media screen and (max-width: 799px) {
+    
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    header, main, footer {
+        border: 0;
+    }
+
+    .article {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+    }
+
+    /* Make the images go away! */
+    .image {
+        visibility:hidden;
+        height: 0;
+    }
+
+    .textbit {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+  }
+  
