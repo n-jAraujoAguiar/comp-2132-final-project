@@ -1,3 +1,21 @@
+<!--
+
+    GENERAL REQUIREMENTS
+Details for the rules and requirements of each game will be provided on the following pages, but no matter which game you implement:
+
+- The game page should be carefully designed and styled with CSS to present a high- quality user experience. Submitting a project with poor or little styling will result in a greatly reduced final mark.
+DONE - There must be at least 6 images used.
+- All paths used in HTML, CSS and Javascript files must be relative paths. Do NOT use server root paths that begin with / or client specific paths like C:/
+- HTML, CSS and Javascript files must be free of serious errors (warnings are ok).
+- Code must be well tabbed and use descriptive variable names.
+- Javascript code must include the use of one or more functions authored by you, and one or more Objects authored by you.
+- Must include at least one Javascript animation (for example, a fade in effect).
+- jQuery may be used if desired.
+- CSS should be compiled from SASS. SASS file(s) should demonstrate the use of SASS variables and at least one SASS mixin. Both .css and .scss files should be included with the project submission.
+- Project must be published to a public repository on Github.com
+
+-->
+
 <!DOCTYPE html>
 <!-- The page starts here: -->
 <html lang="en">
@@ -25,7 +43,7 @@
         <main>
             
             <!-- This holds the player's portrait-->
-            <img class="character-portrait" id="luffy-portrait" src="source/images/floating-luffy.png">
+            <img class="character-portrait" id="luffy-portrait" src="source/images/floating-luffy.png" alt="an image of Luffy from the Straw Hat Pirates">
 
             <div id="explanation">
                 <p>Nami has challenged all the members of the Straw Hat Crew to a game of dice. 
@@ -36,15 +54,24 @@
             </div>
 
             <div class="play-area" id="player-area">
+                <img class="dice-image" id="player-dice-one" src="" alt="player's dice 1">
+                <img class="dice-image" id="player-dice-two" src="" alt="player's dice 2">
+
+                <p class="player-dice-description"></p>
+                <p class="player-dice-result"></p>
 
             </div>
 
             <div class="play-area" id="computer-area">
+                <img class="dice-image" id="computer-dice-one" src="" alt="computer's dice 1">
+                <img class="dice-image" id="computer-dice-two" src="" alt="computer's dice 2">
 
+                <p class="computer-dice-description"></p>
+                <p class="computer-dice-result"></p>
             </div>
 
             <!-- This holds the computer's portrait-->
-            <img class="character-portrait" id="nami-portrait" src="source/images/floating-nami.png">
+            <img class="character-portrait" id="nami-portrait" src="source/images/floating-nami.png" alt="an image of Nami from the Straw Hat Pirates">
 
             <div id="game-result">
                 <img src="" alt="">
