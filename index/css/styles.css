@@ -8,7 +8,7 @@
 html {
     font-family: barlow; /* Setting the imported font */
     color: rgb(12, 37, 37);
-    background-color: aliceblue;
+    background-image: url("../source/images/background.jpg");
 }
 
 body {
@@ -43,47 +43,11 @@ header {
     border-right: solid 5px  rgb(80, 27, 6);
 }
 
-#navbar {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    list-style-type: none;
-    margin: 0;
-    padding-bottom: 10px;
-    padding-left: 0;
-}
-
-/* Changing how the nav bar links look */
-
-/* Adding some padding to all links */
-#navbar a {
-    padding-inline: 5px;
-    color: rgb(80, 27, 6);
-    font-weight: bold;
-}
-
-/* Unvisited link */
-#navbar a:link {
-  color: inherit;
-  font-weight: inherit;
-  
-}
-
-/* Visited link */
-#navbar > a:visited {
-    color: rgb(80, 27, 6);
-}
-
-/* Mouse over link */
-#navbar > a:hover {
-  color: rgb(0, 204, 255);
-}
-
 /* Body's Main Style */
 main {
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    flex-direction: row;
+    flex-wrap: nowrap;
     align-items: center;
     padding-left: 10px;
     padding-right: 10px;
@@ -92,85 +56,51 @@ main {
     border-right: solid 5px  rgb(80, 27, 6);
 }
 
-#gallery-frame {
+.character-portrait {
+    height: 200px;
+    width: auto;
+    padding: 5px;
+}
+
+#explanation {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    height: max-content;
-    width: 75%;
-    padding: 7.5%;
-    background-color: white;
-    border-bottom-width: 20px;
-    border-bottom-style: solid;
-    border-top-width: 20px;
-    border-top-style: solid;
-    border-left: 1px;
-    border-left-style: solid;
-    border-right: 1px;
-    border-right-style: solid;
-    border-color: rgb(80, 27, 6);
-    border-radius: 30px;
-    margin-bottom: 20px;
+    border: solid 2px rgb(80, 27, 6);
+    border-radius: 5%;
+    padding: 2%;
+    height: fit-content;
+    width: fit-content;
 }
 
-#display-image {
-    width: 100%;
-    height: auto;
-}
-
-.buttons {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-}
-
-.animation-button {
-    color: white;
+#play-button {
+    color: beige;
     background-color: rgb(80, 27, 6);
+    width: fit-content;
     padding: 5px;
-    border-radius: 6px;
+    border-radius: 20%;
+    align-self: center;
 }
 
-/* Popup container */
-#popup-container {
-    position: fixed;
-    /* display: inline-block; */
-    cursor: pointer;
+#play-button:hover {
+    color: rgb(80, 27, 6);
+    background-color: beige;
+    border: solid 2px rgb(80, 27, 6);
 }
 
-#close-popup {
-    color:rgb(80, 27, 6);
-    background-color: rgb(173, 227, 236);
-    padding: 10px;
-}
-  
-/* The actual popup (appears on top) */
-#popup-container .popup-text {
-    visibility: hidden;
-    width: 200px;
-    height:fit-content;
+#play-button:active {
+    color: beige;
     background-color: rgb(80, 27, 6);
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 20px;
-    position: absolute;
-    top: 0%;
-    bottom: 0%;
-    left: 50%;
-    margin-left: -80px;
 }
 
-/* Toggle this class to show/hide the popup */
-#popup-container .show {
-    visibility: visible;
-    animation: fadeIn 1s;
+.play-area {
+    visibility: hidden;
+    width: 0;
 }
-  
-/* Add fade in to the popup */
-@keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity:1 ;}
+
+#game-result {
+    position: absolute;
+    visibility: hidden;
+    width: 0;
 }
 
 /* Footer's Style */ 

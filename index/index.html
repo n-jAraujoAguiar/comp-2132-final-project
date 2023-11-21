@@ -4,14 +4,12 @@
     <!-- The head starts here: -->
     <head>
         <meta charset="UTF-8">
-        <title>COMP 2132 - Assignment 08</title>
-        <link rel="stylesheet" type="text/css" href="styles/styles.css">
+        <title>Straw Hats Game Of Dice! - COMP 2132 - Final Project</title>
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
 
-        <!-- Loading the jQuery Library -->
-        <script src="https://code.jquery.com/jquery-3.7.0.min.js" defer></script>
-
-        <!-- Loading jQuery script -->
-        <script src="scripts/gallery-functions.js" defer></script>
+        <!-- Loading required script -->
+        <script src="scripts/dice-functions.js" defer></script>
+        <script src="scripts/other-functions.js" defer></script>
 
     </head>
 
@@ -20,42 +18,39 @@
         
         <!-- The body's header starts here: -->
         <header>
-            <h1>Welcome To My Site</h1>
-
-            <!-- Navigation bar placeholder -->
-            <ul id="navbar">
-                <li><a href="">Page 1</a></li>
-                <li><a href="">Page 2</a></li>
-                <li><a href="">Page 3</a></li>
-                <li><a href="">Page 4</a></li>
-                <li><a href="">Page 5</a></li>
-            </ul>
+            <h1>The Straw Hats Game of Dice!</h1>
         </header>
 
         <!-- The body's main starts here: -->
         <main>
             
-            <h2>Bike Product: LTD Race</h2>
+            <!-- This holds the player's portrait-->
+            <img class="character-portrait" id="luffy-portrait" src="source/images/floating-luffy.png">
 
-            <!-- This is the container for the popup message -->
-            <div id="popup-container">
-                <div class="popup-text" id="popup">
-                    <p>To start the animation please press the "start" button.</p>
-                    <p>To stop the animation click on the "stop" button.</p>
-                    <p>To close this popup press the "close" button.</p>
-                    <div id="close-popup">Close</div>
-                </div>
-            </div> 
-            
-            <!-- This is the main container for the rotating gallery -->
-            <div id="gallery-frame">
+            <div id="explanation">
+                <p>Nami has challenged all the members of the Straw Hat Crew to a game of dice. 
+                    Help Luffy win this game so he can keep his hard earned bellies.</p>
+                <p>Be careful! She definitely has an ace under her sleeve!</p>
 
-                <img id="display-image" src="product-images/bike-1.jpg" alt="rotating image of a bike">
-                <div class="buttons">
-                    <div class="animation-button" id="start">Start</div>
-                    <div class="animation-button" id="stop">Stop</div>
-                </div>
+                <div id="play-button">Play!</div>
             </div>
+
+            <div class="play-area" id="player-area">
+
+            </div>
+
+            <div class="play-area" id="computer-area">
+
+            </div>
+
+            <!-- This holds the computer's portrait-->
+            <img class="character-portrait" id="nami-portrait" src="source/images/floating-nami.png">
+
+            <div id="game-result">
+                <img src="" alt="">
+                <p id="end-quote"></p>
+            </div>
+           
 
         </main>
 
