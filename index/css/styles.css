@@ -72,7 +72,7 @@ main {
     width: fit-content;
 }
 
-#play-button {
+.button {
     color: beige;
     background-color: rgb(80, 27, 6);
     width: fit-content;
@@ -81,13 +81,13 @@ main {
     align-self: center;
 }
 
-#play-button:hover {
+.button:hover {
     color: rgb(80, 27, 6);
     background-color: beige;
     border: solid 2px rgb(80, 27, 6);
 }
 
-#play-button:active {
+.button:active {
     color: beige;
     background-color: rgb(80, 27, 6);
 }
