@@ -37,8 +37,6 @@ const htmlPlayerResult    = document.getElementById("player-dice-result");
 const htmlComputerDesc    = document.getElementById("computer-dice-description");
 const htmlComputerResult  = document.getElementById("computer-dice-result");
 
-
-
 // these variables hold things related to die calculations.
 const DICE_MAX                  = 6;
 const DICE_MIN                  = 1;
@@ -50,7 +48,6 @@ const DICE_SRC_FILE             = ".png";
 const WIN_QUOTE                 = "You win!";
 const LOSE_QUOTE                = "You lose!";
 const DRAW_QUOTE                = "It's a Draw!";
-
 
 // these variables store values related to animation.
 const FRAME_RATE_MS  = 50;
