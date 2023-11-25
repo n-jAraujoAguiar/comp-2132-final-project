@@ -97,10 +97,35 @@ main {
     width: 0;
 }
 
+/* Toggle this class to show/hide the popup */
+.play-area .show {
+    visibility: visible;
+    width: 25%;
+    animation: fadeIn 1s;
+}
+
+.play-area .hide {
+    visibility: hidden;
+    width: 0;
+    animation: fadeOut 1s;
+}
+
 #game-result {
     position: absolute;
     visibility: hidden;
     width: 0;
+}
+  
+/* Add fade in to the popup */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+
+/* Add fade in to the popup */
+@keyframes fadeOut {
+    from {opacity: 1;}
+    to {opacity: 0;}
 }
 
 /* Footer's Style */ 
