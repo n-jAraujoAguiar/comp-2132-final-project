@@ -1,19 +1,32 @@
 // review session 7
 
 // variables that store the DOM elements
-const htmlPlayButton = document.getElementById("play-button");
-const htmlRollButton = document.getElementById("roll-button");
-const htmlPlayArea   = document.getElementsByClassName("play-area");
+const htmlPlayButton  = document.getElementById("play-button");
+const htmlRollButton  = document.getElementById("roll-button");
+const htmlPlayArea    = document.getElementsByClassName("play-area");
+const htmlExplanation = document.getElementById("explanation");
+
+function hideClass(htmlClass) {
+    if(htmlClass.checkVisibility()) {
+        htmlClass.classList.toggle("hide");
+    }
+}
+
+function showClass(htmlClass) {
+    if(!htmlClass.checkVisibility()) {
+        htmlClass.classList.toggle("show");
+    }
+}
 
 function hideElement(element) {
-    element.classList.toggle("show");
+    htmlExplanation.checkVisibility()
 }
 
-function showElement(element) {
-    
-}
+htmlPlayButton.addEventListener("click", function() {
+
+    hideElement(htmlExplanation);
+    showElement(htmlPlayArea);
 
 
-
-htmlPlayButton.addEventListener("click", );
-htmlRollButton.addEventListener();
+});
+htmlRollButton.addEventListener("click", showElement(htmlRollButton));

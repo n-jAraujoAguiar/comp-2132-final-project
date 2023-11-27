@@ -72,6 +72,18 @@ main {
     width: fit-content;
 }
 
+#explanation .show {
+    visibility: visible;
+    width: fit-content;
+    animation: fadeIn 1s;
+}
+
+#explanation .hide {
+    visibility: hidden;
+    width: 0;
+    animation: fadeOut 1s;
+}
+
 .button {
     color: beige;
     background-color: rgb(80, 27, 6);
@@ -114,6 +126,25 @@ main {
     position: absolute;
     visibility: hidden;
     width: 0;
+    top: 0%;
+    bottom: 0%;
+    left: 50%;
+    margin-left: -80px;
+    text-align: center;
+    border-radius: 6px;
+    padding: 20px;
+}
+
+#game-result .show {
+    visibility: visible;
+    width: 25%;
+    animation: fadeIn 1s;
+}
+
+#game-result .hide {
+    visibility: hidden;
+    width: 0;
+    animation: fadeOut 1s;
 }
   
 /* Add fade in to the popup */
