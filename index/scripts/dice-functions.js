@@ -50,8 +50,8 @@ const LOSE_QUOTE                = "You lose!";
 const DRAW_QUOTE                = "It's a Draw!";
 
 // these variables store values related to animation.
-const FRAME_RATE_MS  = 50;
-const ROLL_TIME      = 2000; 
+const FRAME_RATE_MS  = 200;
+const ROLL_TIME      = 1000; 
 let letAnimationPlay = false;
 let animationFunction; // this variable stores the animation status
 
@@ -94,7 +94,7 @@ function callUpdater() {
 // this function updates the die face image.
 function updateDieImage(die, dieNumber) {
 
-    die.getAttribute("scr") = DICE_SRC_BASE + dieNumber + DICE_SRC_FILE;
+    die.setAttribute("src", DICE_SRC_BASE + dieNumber + DICE_SRC_FILE) ;
 
 }
 
@@ -159,14 +159,14 @@ function rollDice() {
         updateDieImage(htmlPlayerDieOne, playerDieOne); 
         updateDieImage(htmlPlayerDieTwo, playerDieTwo); 
         updateDieImage(htmlComputerDieOne, computerDieOne); 
-        updateDieImage(htmlComputerDieTwo, computerDieOTwo); 
+        updateDieImage(htmlComputerDieTwo, computerDieTwo); 
 
         // step 5: calculate the values
         playerRollValue    = calculateRollValue(playerDieOne, playerDieTwo);
         computerRollValue  = calculateRollValue(computerDieOne, computerDieTwo);
 
         // step 6: display the roll result
-        setRollResults();
+        setRollResults(playerRollValue, computerRollValue);
 
     }, ROLL_TIME)
 }

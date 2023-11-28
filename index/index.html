@@ -31,6 +31,7 @@ This I am having trouble with:
         <link rel="stylesheet" type="text/css" href="css/styles.css">
 
         <!-- Loading required script -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
         <script src="scripts/dice-functions.js" defer></script>
         <script src="scripts/other-functions.js" defer></script>
 
@@ -59,31 +60,38 @@ This I am having trouble with:
             </div>
 
             <div class="play-area" id="player-area">
-                <img class="dice-image" id="player-dice-one" src="" alt="player's dice 1">
-                <img class="dice-image" id="player-dice-two" src="" alt="player's dice 2">
+                <div class="dice-area" id="player-dice">
+                    <img class="dice-image" id="player-dice-one" src="" alt="player's dice 1">
+                    <img class="dice-image" id="player-dice-two" src="" alt="player's dice 2">
+                </div>
 
-                <div class="button" id="roll-button">Let's Roll!</div>
-
+                
+                
                 <p id="player-dice-description"></p>
                 <p id="player-dice-result"></p>
-
+                
+                <div class="button" id="roll-button">Let's Roll!</div>
+                
             </div>
 
             <div class="play-area" id="computer-area">
-                <img class="dice-image" id="computer-dice-one" src="" alt="computer's dice 1">
-                <img class="dice-image" id="computer-dice-two" src="" alt="computer's dice 2">
-
+                <div class="dice-area" id="computer-dice">   
+                    <img class="dice-image" id="computer-dice-one" src="" alt="computer's dice 1">
+                    <img class="dice-image" id="computer-dice-two" src="" alt="computer's dice 2">
+                </div>
+                
                 <p id="computer-dice-description"></p>
                 <p id="computer-dice-result"></p>
+                
             </div>
 
             <!-- This holds the computer's portrait-->
             <img class="character-portrait" id="nami-portrait" src="source/images/floating-nami.png" alt="an image of Nami from the Straw Hat Pirates">
 
-            <div id="game-result">
+            <!-- <div id="game-result">
                 <img src="" alt="">
                 <p id="end-quote"></p>
-            </div>
+            </div> -->
            
 
         </main>

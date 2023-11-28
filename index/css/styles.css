@@ -105,37 +105,61 @@ main {
 }
 
 .play-area {
-    visibility: hidden;
-    width: 0;
+    background-image: url("../source/images/dice-background.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    display: flex;
+    flex-direction: column;
+    align-self: top;
+    padding: 5%;
+    justify-content: center;
+    width: 25%;
+    height: 50%;
+    visibility: collapse;
 }
 
-/* Toggle this class to show/hide the popup */
+/* Toggle this class to show/hide the popup
 .play-area .show {
     visibility: visible;
     width: 25%;
     animation: fadeIn 1s;
-}
+} */
 
-.play-area .hide {
+/* #play-area .hide {
     visibility: hidden;
     width: 0;
     animation: fadeOut 1s;
+} */
+
+.dice-area {
+    display: flex;
+    flex-direction: row;
+    visibility: collapse;
+    align-self: center;
+    justify-content: space-evenly;
+    padding: 5%;
+    padding-top: 10%;
 }
 
+/* #player-dice-result {
+    padding-bottom: 10%;
+} */
+
 #game-result {
-    position: absolute;
-    visibility: hidden;
-    width: 0;
+    /* position: absolute;
+    visibility: hidden; */
+    /* width: 0;
     top: 0%;
     bottom: 0%;
     left: 50%;
-    margin-left: -80px;
+    margin-left: -80px; */
+    width: 40%;
     text-align: center;
     border-radius: 6px;
     padding: 20px;
 }
 
-#game-result .show {
+/* #game-result .show {
     visibility: visible;
     width: 25%;
     animation: fadeIn 1s;
@@ -145,6 +169,11 @@ main {
     visibility: hidden;
     width: 0;
     animation: fadeOut 1s;
+} */
+
+.dice-image {
+    height: auto;
+    width: 0;
 }
   
 /* Add fade in to the popup */

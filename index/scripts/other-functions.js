@@ -1,32 +1,44 @@
 // review session 7
 
 // variables that store the DOM elements
-const htmlPlayButton  = document.getElementById("play-button");
-const htmlRollButton  = document.getElementById("roll-button");
-const htmlPlayArea    = document.getElementsByClassName("play-area");
-const htmlExplanation = document.getElementById("explanation");
+const $PlayButton  = $("#play-button");
+const $RollButton  = $("#roll-button");
+const $PlayArea    = $(".play-area");
+const $Explanation = $("#explanation");
+const $DiceArea    = $(".dice-area");
+const $DiceImage   = $(".dice-image")
 
-function hideClass(htmlClass) {
-    if(htmlClass.checkVisibility()) {
-        htmlClass.classList.toggle("hide");
-    }
-}
+const htmlPlayButton = document.getElementById("play-button");
+const htmlRollButton = document.getElementById("roll-button");
 
-function showClass(htmlClass) {
-    if(!htmlClass.checkVisibility()) {
-        htmlClass.classList.toggle("show");
-    }
+
+function showElement(element) {
+        element.classList.toggle("show");
 }
 
 function hideElement(element) {
-    htmlExplanation.checkVisibility()
+        element.classList.toggle("hide")
 }
 
 htmlPlayButton.addEventListener("click", function() {
 
-    hideElement(htmlExplanation);
-    showElement(htmlPlayArea);
-
+    $Explanation.hide();
+    $PlayArea.css("visibility", "visible");
 
 });
-htmlRollButton.addEventListener("click", showElement(htmlRollButton));
+
+$RollButton.click(function() {
+    $DiceArea.css('visibility', "visible");
+    $DiceImage.css("width", "40%");
+    $DiceImage.css("padding", "2%");
+    $DiceImage.css("align")
+    rollDice();
+    }
+);
+
+// htmlRollButton.addEventListener("click", function() {
+//     $DiceArea.css('visibility', "visible");
+//     rollDice();
+// });
+
+
