@@ -50,14 +50,16 @@ const LOSE_QUOTE                = "You lose!";
 const DRAW_QUOTE                = "It's a Draw!";
 
 // these variables store values related to animation.
-const FRAME_RATE_MS  = 200;
+const FRAME_RATE_MS  = 50;
 const ROLL_TIME      = 1000; 
+
+let dieIndex         = 0;
 let letAnimationPlay = false;
 let animationFunction; // this variable stores the animation status
 
 
 
-// this function controls the logic of the animation. Ergo, stops multiple instances.
+// this function controls the logic of the animation.
 function startAnimation() {
 
     if(letAnimationPlay) {
@@ -66,12 +68,13 @@ function startAnimation() {
 
     letAnimationPlay = true;
 
-    animationFunction = requestAnimationFrame(callUpdater); // how do I send it parameters? 
+    animationFunction = requestAnimationFrame(callUpdater); 
     
     setTimeout(function(){
         if (letAnimationPlay) {
             animationFunction = requestAnimationFrame(callUpdater);
         } 
+
     }, FRAME_RATE_MS)
 }
 
@@ -85,10 +88,18 @@ function stopAnimation() {
 
 // this functions makes it so all 4 dice get updated simultaneusly
 function callUpdater() {
-    updateDieImage(htmlPlayerDieOne,    getDieNumber());
-    updateDieImage(htmlPlayerDieTwo,    getDieNumber());
-    updateDieImage(htmlComputerDieOne,  getDieNumber());
-    updateDieImage(htmlComputerDieTwo,  getDieNumber());
+    const numberList = [1, 2, 3, 4, 5, 6]
+
+    if(dieIndex >= numberList.length) {
+        dieIndex = 0;
+    }
+  
+    updateDieImage(htmlPlayerDieOne,    numberList[dieIndex]);
+    updateDieImage(htmlPlayerDieTwo,    numberList[dieIndex]);
+    updateDieImage(htmlComputerDieOne,  numberList[dieIndex]);
+    updateDieImage(htmlComputerDieTwo,  numberList[dieIndex]);
+
+    dieIndex++;
 }
 
 // this function updates the die face image.
@@ -168,7 +179,7 @@ function rollDice() {
         // step 6: display the roll result
         setRollResults(playerRollValue, computerRollValue);
 
-    }, ROLL_TIME)
+    }, ROLL_TIME - FRAME_RATE_MS)
 }
 
 /*

@@ -6,7 +6,7 @@ const $RollButton  = $("#roll-button");
 const $PlayArea    = $(".play-area");
 const $Explanation = $("#explanation");
 const $DiceArea    = $(".dice-area");
-const $DiceImage   = $(".dice-image")
+const $DiceImage   = $(".dice-image");
 
 const htmlPlayButton = document.getElementById("play-button");
 const htmlRollButton = document.getElementById("roll-button");
@@ -17,21 +17,25 @@ function showElement(element) {
 }
 
 function hideElement(element) {
-        element.classList.toggle("hide")
+        element.classList.toggle("hide");
 }
 
 htmlPlayButton.addEventListener("click", function() {
+    
 
-    $Explanation.hide();
-    $PlayArea.css("visibility", "visible");
-
+    setTimeout(() => {
+        $PlayArea.fadeIn();
+        $PlayArea.css("display", "flex");
+    }, 505)
+    
+    $Explanation.fadeOut(500);
 });
 
 $RollButton.click(function() {
     $DiceArea.css('visibility', "visible");
     $DiceImage.css("width", "40%");
     $DiceImage.css("padding", "2%");
-    $DiceImage.css("align")
+    $DiceImage.css("align");
     rollDice();
     }
 );
