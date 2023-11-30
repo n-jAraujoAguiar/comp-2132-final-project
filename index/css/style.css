@@ -51,9 +51,10 @@ main {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    align-items: center;
+    align-items: top;
     justify-content: space-evenly;
     height: 100%;
+    padding-top: 5%;
     padding-left: 10px;
     padding-right: 10px;
     background-color: beige;
@@ -77,17 +78,6 @@ main {
     width: fit-content;
 }
 
-#explanation .show {
-    visibility: visible;
-    width: fit-content;
-    animation: fadeIn 1s;
-}
-
-#explanation .hide {
-    visibility: hidden;
-    width: 0;
-    animation: fadeOut 1s;
-}
 
 .button {
     color: beige;
@@ -149,6 +139,8 @@ main {
     border-radius: 6px;
     background-color: beige;
     padding: 20px;
+    font: bolder;
+    font-size: large;
 }
 
 #result-image {
@@ -159,6 +151,10 @@ main {
     height: auto;
     width: 40%;
 
+}
+
+#retry-button {
+	display: none;
 }
 
 /* Footer's Style */ 

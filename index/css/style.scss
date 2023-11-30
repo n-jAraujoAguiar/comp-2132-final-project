@@ -1,0 +1,223 @@
+$color_1: rgb(12, 37, 37);
+$color_2: rgb(147, 231, 231);
+$color_3: beige;
+$color_4: rgb(80, 27, 6);
+$font-family_1: barlow;
+$background-color_1: rgb(80, 27, 6);
+$background-color_2: rgb(173, 227, 236);
+$background-color_3: beige;
+$border-color_1: rgb(80, 27, 6);
+
+/* Font import from file */
+@font-face {
+	font-family: "barlow";
+	src: url(../source/font/Barlow-Regular.ttf);
+}
+
+html {
+	font-family: $font-family_1;
+	color: $color_1;
+	background-image: url("../source/images/background.jpg");
+}
+body {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-content: stretch;
+	height: 100%;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-left: 20%;
+	padding-right: 20%;
+	position: absolute;
+	right: 0;
+	left: 0;
+}
+h2 {
+	color: $color_2;
+	background-color: $background-color_1;
+	border-radius: 6px;
+	padding: 5px;
+}
+header {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+	background-color: $background-color_2;
+	border-left: solid 5px rgb(80, 27, 6);
+	border-right: solid 5px rgb(80, 27, 6);
+}
+main {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: top;
+	justify-content: space-evenly;
+	height: 100%;
+	padding-top: 5%;
+	padding-left: 10px;
+	padding-right: 10px;
+	background-color: $background-color_3;
+	border-left: solid 5px rgb(80, 27, 6);
+	border-right: solid 5px rgb(80, 27, 6);
+}
+.character-portrait {
+	height: 200px;
+	width: auto;
+	padding: 5px;
+}
+#explanation {
+	display: flex;
+	flex-direction: column;
+	border: solid 2px rgb(80, 27, 6);
+	border-radius: 5%;
+	padding: 2%;
+	height: fit-content;
+	width: fit-content;
+}
+.button {
+	color: $color_3;
+	background-color: $background-color_1;
+	width: fit-content;
+	padding: 5px;
+	border-radius: 20%;
+	align-self: center;
+	&:hover {
+		color: $color_4;
+		background-color: $background-color_3;
+		border: solid 2px rgb(80, 27, 6);
+	}
+	&:active {
+		color: $color_3;
+		background-color: $background-color_1;
+	}
+}
+.play-area {
+	background-image: url("../source/images/dice-background.png");
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	display: none;
+	flex-direction: column;
+	align-self: top;
+	padding: 5%;
+	align-items: center;
+	justify-content: center;
+	width: 250px;
+	height: 300px;
+}
+.dice-area {
+	display: flex;
+	flex-direction: row;
+	align-self: center;
+	justify-content: space-evenly;
+	padding: 5%;
+	padding-top: 10%;
+}
+#game-result {
+	position: absolute;
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	top: 50%;
+	left: 0;
+	margin-left: -80px;
+	width: 0;
+	text-align: center;
+	border: solid 5px;
+	border-color: $border-color_1;
+	border-radius: 6px;
+	background-color: $background-color_3;
+	padding: 20px;
+	font: bolder;
+	font-size: large;
+}
+#result-image {
+	height: 60%;
+}
+.dice-image {
+	height: auto;
+	width: 40%;
+}
+
+#retry-button {
+	display: none;
+}
+
+
+footer {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	background-color: $background-color_2;
+	padding: 5px;
+	padding-bottom: 2%;
+	border-left: solid 5px rgb(80, 27, 6);
+	border-right: solid 5px rgb(80, 27, 6);
+	bottom: 0;
+}
+#signature {
+	align-self: center;
+}
+#back_to_top {
+	width: auto;
+	align-self: center;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+@media screen and (max-width: 1269px) and (min-width: 800px) {
+	body {
+		padding-left: 10%;
+		padding-right: 10%;
+	}
+	.article {
+		display: flex;
+		flex-direction: column;
+		justify-content: start;
+		align-items: start;
+	}
+	.image {
+		border: 0;
+		border-radius: 0;
+		padding: 1px;
+		height: 300px;
+		width: auto;
+		justify-self: center;
+		align-self: center;
+	}
+	.textbit {
+		height: fit-content;
+	}
+}
+@media screen and (max-width: 799px) {
+	body {
+		margin: 0;
+		padding: 0;
+	}
+	header {
+		border: 0;
+	}
+	main {
+		border: 0;
+	}
+	footer {
+		border: 0;
+	}
+	.article {
+		display: flex;
+		flex-direction: column;
+		justify-content: start;
+		align-items: start;
+	}
+	.image {
+		visibility: hidden;
+		height: 0;
+	}
+	.textbit {
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+}

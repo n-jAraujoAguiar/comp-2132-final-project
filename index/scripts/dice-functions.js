@@ -43,6 +43,7 @@ const DICE_MIN                  = 1;
 const DICE_DOUBLE_MULTIPLIER    = 2;
 const DICE_ONE_VALUE            = 1;
 const DICE_ONE_MULTIPLIER       = 0;
+const MAX_WINS                  = 3;
 const DICE_SRC_BASE             = "source/images/dice-";
 const DICE_SRC_FILE             = ".png";
 const WIN_QUOTE                 = "You win!";
@@ -55,9 +56,12 @@ const ROLL_TIME      = 1000;
 
 let dieIndex         = 0;
 let letAnimationPlay = false;
+let playerWinCount   = 0;
+let computerWinCount = 0;
+let playerScore      = 0;
+let computerScore    = 0;
+let gameCount        = 0;
 let animationFunction; // this variable stores the animation status
-
-
 
 // this function controls the logic of the animation.
 function startAnimation() {
@@ -126,28 +130,25 @@ function setRollResults(playerResult, computerResult) {
 
         htmlPlayerDesc.innerHTML    = DRAW_QUOTE;
         htmlComputerDesc.innerHTML  = DRAW_QUOTE;
-
         announceResults(null);
 
     } else if (playerResult > computerResult){
 
         htmlPlayerDesc.innerHTML    = WIN_QUOTE;
         htmlComputerDesc.innerHTML  = LOSE_QUOTE;
-
         announceResults(true);
 
     } else {
 
         htmlPlayerDesc.innerHTML    = LOSE_QUOTE;
         htmlComputerDesc.innerHTML  = WIN_QUOTE;
-
         announceResults(false);
 
     }
 
 }
 
-// this function will kickoff all the dice rlling functions.
+// this function will kickoff all the dice rolling functions.
 function rollDice() {
 
     let playerDieOne;
@@ -184,6 +185,23 @@ function rollDice() {
 
         // step 6: display the roll result
         setRollResults(playerRollValue, computerRollValue);
+        playerScore = playerScore + playerRollValue;
+        computerScore = computerScore + computerRollValue;
+
+        gameCount++
+
+        if(gameCount == MAX_WINS) {
+            if(playerScore >= computerScore) {
+                endGame(true);
+                return;
+                
+            } else if (playerScore <= computerScore){
+                endGame(false);
+                playerScore = 0;
+                computerScore = 0;
+                return;
+            }
+        }
 
     }, ROLL_TIME - FRAME_RATE_MS)
 }
