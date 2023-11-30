@@ -127,15 +127,21 @@ function setRollResults(playerResult, computerResult) {
         htmlPlayerDesc.innerHTML    = DRAW_QUOTE;
         htmlComputerDesc.innerHTML  = DRAW_QUOTE;
 
+        announceResults(null);
+
     } else if (playerResult > computerResult){
 
         htmlPlayerDesc.innerHTML    = WIN_QUOTE;
         htmlComputerDesc.innerHTML  = LOSE_QUOTE;
 
+        announceResults(true);
+
     } else {
 
         htmlPlayerDesc.innerHTML    = LOSE_QUOTE;
         htmlComputerDesc.innerHTML  = WIN_QUOTE;
+
+        announceResults(false);
 
     }
 

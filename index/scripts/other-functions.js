@@ -7,42 +7,79 @@ const $PlayArea    = $(".play-area");
 const $Explanation = $("#explanation");
 const $DiceArea    = $(".dice-area");
 const $DiceImage   = $(".dice-image");
+const $Results     = $("#game-result");
+const $ResultImg   = $("#result-image");
 
 const htmlPlayButton = document.getElementById("play-button");
 const htmlRollButton = document.getElementById("roll-button");
 
+const FADE_DURATION_MS      = 500;
+const RESULT_DUR_MS         = 4000;
+const DEFAULT_DISPLAY       = "flex";
+const ROUND_WIN_IMG         = "source/images/luffy-win.gif";
+const ROUND_DRAW_IMG        = "source/images/luffy-draw.gif";
+const ROUND_LOSE_IMG        = "source/images/luffy-lose.gif";
+const GAME_WIN              = "source/images/nami-lose.gif";
+const GAME_LOSE             = "source/images/nami-win.gif";
 
-function showElement(element) {
-        element.classList.toggle("show");
-}
-
-function hideElement(element) {
-        element.classList.toggle("hide");
-}
-
-htmlPlayButton.addEventListener("click", function() {
-    
-
+function transitionElements(inElement, inElementDisplay, outElement = null) {
     setTimeout(() => {
-        $PlayArea.fadeIn();
-        $PlayArea.css("display", "flex");
-    }, 505)
-    
-    $Explanation.fadeOut(500);
+
+        inElement.fadeIn();
+        inElement.css("display", inElementDisplay);
+
+    }, FADE_DURATION_MS);
+
+    if(outElement != null) {
+        outElement.fadeOut(FADE_DURATION_MS);
+    }
+}
+
+$PlayButton.on("click", function() {
+    transitionElements($PlayArea, DEFAULT_DISPLAY, $Explanation);
+    callUpdater();
+    transitionElements($DiceImage, DEFAULT_DISPLAY);
 });
 
-$RollButton.click(function() {
-    $DiceArea.css('visibility', "visible");
-    $DiceImage.css("width", "40%");
-    $DiceImage.css("padding", "2%");
-    $DiceImage.css("align");
-    rollDice();
+$RollButton.click(rollDice);
+
+
+
+function announceResults(result){ 
+
+    // update this so that the result screen shows the result.
+    if(result === null) {
+        $ResultImg.attr("src", ROUND_DRAW_IMG);
+
+    } else if(result) {
+        $ResultImg.attr("src", ROUND_WIN_IMG);
+    } else { 
+        $ResultImg.attr("src", ROUND_LOSE_IMG)
     }
-);
 
-// htmlRollButton.addEventListener("click", function() {
-//     $DiceArea.css('visibility', "visible");
-//     rollDice();
-// });
+    $Results.css('display', 'flex');
+
+    $Results.animate({
+        left:       '50%',
+        right:      '50%',
+        height:     '40%',
+        width:      '40%'
+    });
+
+    setTimeout(() => {
+        
+        $Results.animate({
+            left:       '100%',
+            height:     '0%',
+            width:      '0%'
+        })
+
+        $Results.fadeOut();
+        
 
 
+    }, RESULT_DUR_MS);
+
+    $Results.css('left', '0%');
+    $Results.css('right', '100%')
+}
